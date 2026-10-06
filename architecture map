@@ -1,0 +1,19 @@
+                                                     |
+                                            ____________________________
+                                            |                          |
+     verification module                attendace egine
+                                           |
+                                         |                            ___________
+                                                                      |    |    |
+NFC  FACE  BLE                   attendance decision         
+
+     evidence\signals                                                  __________  
+
+   attendance engine                                                        |
+   |--present                                                         
+   |--late                                                                  |
+   |--absent
+   |--partial                                                                |
+
+   +risk\anomality engine
+        |___suspicious activity                  |

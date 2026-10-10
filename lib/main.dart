@@ -54,11 +54,25 @@ class HomePage extends StatelessWidget {
               child: const Text('Student Login'),
             ),
             ElevatedButton(
-              onPressed: () {
+              
+onPressed: () {
+  if (reg.text.trim().isEmpty || pass.text.isEmpty) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Enter both fields.'),
+      ),
+    );
+    return;
+  }
+
   Navigator.push(
     context,
     MaterialPageRoute(
-      builder: (_) => const LecturerDashboard(),
+      builder: (_) => const StudentAttendance(),
+    ),
+  );
+},
+
     ),
   );
 },

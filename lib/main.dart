@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'student_login.dart';
 void main() => runApp(const SMAP());
 
 class SMAP extends StatelessWidget {
@@ -85,67 +85,6 @@ void openPage(BuildContext context, String title) {
   );
 }
 
-class StudentLogin extends StatefulWidget {
-  const StudentLogin({super.key});
-
-  @override
-  State<StudentLogin> createState() => _StudentLoginState();
-}
-
-class _StudentLoginState extends State<StudentLogin> {
-  final reg = TextEditingController();
-  final pass = TextEditingController();
-
-  @override
-  void dispose() {
-    reg.dispose();
-    pass.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Student Login')),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            TextField(
-              controller: reg,
-              decoration: const InputDecoration(
-                labelText: 'Registration Number',
-                border: OutlineInputBorder(),
-              ),
-            ),
-            const SizedBox(height: 15),
-            TextField(
-              controller: pass,
-              obscureText: true,
-              decoration: const InputDecoration(
-                labelText: 'Password',
-                border: OutlineInputBorder(),
-              ),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                String message =
-                    reg.text.trim().isEmpty || pass.text.isEmpty
-                    ? 'Enter both fields.'
-                    : 'Demo only: real login is not connected yet.';
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(message)),
-                );
-              },
-              child: const Text('Sign In'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
 
 class InfoPage extends StatelessWidget {
   final String title;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'student_login.dart';
+import 'student_attendance.dart';
 void main() => runApp(const SMAP());
 
 class SMAP extends StatelessWidget {

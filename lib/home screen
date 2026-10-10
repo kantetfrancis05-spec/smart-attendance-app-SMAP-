@@ -1,0 +1,218 @@
+import 'package:flutter/material.dart';
+
+void main() {
+runApp(const SMAPApp());
+}
+
+class SMAPApp extends StatelessWidget {
+const SMAPApp({super.key});
+
+@override
+Widget build(BuildContext context) {
+return MaterialApp(
+title: 'SMAP',
+debugShowCheckedModeBanner: false,
+theme: ThemeData(
+colorScheme: ColorScheme.fromSeed(
+seedColor: Colors.indigo,
+),
+useMaterial3: true,
+),
+home: const HomeScreen(),
+);
+}
+}
+
+class HomeScreen extends StatelessWidget {
+const HomeScreen({super.key});
+
+void openPage(BuildContext context, String title) {
+Navigator.push(
+context,
+MaterialPageRoute(
+builder: (context) => DetailScreen(title: title),
+),
+);
+}
+
+@override
+Widget build(BuildContext context) {
+return Scaffold(
+backgroundColor: const Color(0xFFF5F7FF),
+appBar: AppBar(
+title: const Text('SMAP'),
+centerTitle: true,
+backgroundColor: Colors.indigo,
+foregroundColor: Colors.white,
+),
+body: SafeArea(
+child: ListView(
+padding: const EdgeInsets.all(22),
+children: [
+const SizedBox(height: 20),
+const Icon(
+Icons.verified_user,
+size: 75,
+color: Colors.indigo,
+),
+const SizedBox(height: 12),
+const Text(
+'Smart Attendance App',
+textAlign: TextAlign.center,
+style: TextStyle(
+fontSize: 25,
+fontWeight: FontWeight.bold,
+),
+),
+const SizedBox(height: 8),
+const Text(
+'Verify. Attend. Stay Present.',
+textAlign: TextAlign.center,
+style: TextStyle(color: Colors.black54),
+),
+const SizedBox(height: 28),
+const Text(
+'Welcome!',
+style: TextStyle(
+fontSize: 22,
+fontWeight: FontWeight.bold,
+),
+),
+const SizedBox(height: 8),
+const Text(
+'Choose how you want to use SMAP.',
+style: TextStyle(fontSize: 15),
+),
+const SizedBox(height: 22),
+HomeButton(
+icon: Icons.school,
+title: 'Student Login',
+subtitle: 'Access your attendance record',
+onTap: () => openPage(context, 'Student Login'),
+),
+const SizedBox(height: 14),
+HomeButton(
+icon: Icons.co_present,
+title: 'Lecturer Login',
+subtitle: 'Manage classes and attendance',
+onTap: () => openPage(context, 'Lecturer Login'),
+),
+const SizedBox(height: 14),
+HomeButton(
+icon: Icons.shield_outlined,
+title: 'Attendance Verification',
+subtitle: 'Explore our verification process',
+onTap: () => openPage(
+context,
+'Attendance Verification',
+),
+),
+const SizedBox(height: 28),
+const Text(
+'Designed to help reduce attendance fraud.',
+textAlign: TextAlign.center,
+style: TextStyle(
+fontSize: 13,
+color: Colors.black54,
+),
+),
+],
+),
+),
+);
+}
+}
+
+class HomeButton extends StatelessWidget {
+final IconData icon;
+final String title;
+final String subtitle;
+final VoidCallback onTap;
+
+const HomeButton({
+super.key,
+required this.icon,
+required this.title,
+required this.subtitle,
+required this.onTap,
+});
+
+@override
+Widget build(BuildContext context) {
+return Card(
+elevation: 1,
+child: ListTile(
+contentPadding: const EdgeInsets.all(14),
+leading: Icon(
+icon,
+color: Colors.indigo,
+size: 34,
+),
+title: Text(
+title,
+style: const TextStyle(fontWeight: FontWeight.bold),
+),
+subtitle: Padding(
+padding: const EdgeInsets.only(top: 5),
+child: Text(subtitle),
+),
+trailing: const Icon(Icons.arrow_forward_ios, size: 17),
+onTap: onTap,
+),
+);
+}
+}
+
+class DetailScreen extends StatelessWidget {
+final String title;
+
+const DetailScreen({super.key, required this.title});
+
+@override
+Widget build(BuildContext context) {
+return Scaffold(
+appBar: AppBar(
+title: Text(title),
+backgroundColor: Colors.indigo,
+foregroundColor: Colors.white,
+),
+body: Center(
+child: Padding(
+padding: const EdgeInsets.all(24),
+child: Column(
+mainAxisSize: MainAxisSize.min,
+children: [
+const Icon(
+Icons.construction,
+size: 65,
+color: Colors.indigo,
+),
+const SizedBox(height: 20),
+Text(
+title,
+textAlign: TextAlign.center,
+style: const TextStyle(
+fontSize: 25,
+fontWeight: FontWeight.bold,
+),
+),
+const SizedBox(height: 12),
+const Text(
+'This section is under development. '
+'We will build it step by step.',
+textAlign: TextAlign.center,
+style: TextStyle(fontSize: 16),
+),
+const SizedBox(height: 24),
+FilledButton.icon(
+onPressed: () => Navigator.pop(context),
+icon: const Icon(Icons.arrow_back),
+label: const Text('Back to Home'),
+),
+],
+),
+),
+),
+);
+}
+}

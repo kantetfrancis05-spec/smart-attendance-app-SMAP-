@@ -53,7 +53,14 @@ class HomePage extends StatelessWidget {
               child: const Text('Student Login'),
             ),
             ElevatedButton(
-              onPressed: () => openPage(context, 'Lecturer Login'),
+              onPressed: () {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (_) => const LecturerDashboard(),
+    ),
+  );
+},
               child: const Text('Lecturer Login'),
             ),
             ElevatedButton(

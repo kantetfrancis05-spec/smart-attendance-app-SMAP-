@@ -162,3 +162,65 @@ class InfoPage extends StatelessWidget {
     );
   }
 }
+class LecturerDashboard extends StatelessWidget {
+  const LecturerDashboard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Lecturer Dashboard'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const Icon(
+              Icons.co_present,
+              size: 70,
+              color: Colors.indigo,
+            ),
+            const Text(
+              'Welcome, Lecturer',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 25),
+            const Text('Manage your lecture attendance.'),
+            const SizedBox(height: 20),
+            ElevatedButton.icon(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text(
+                      'Lecture session feature coming next.',
+                    ),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.play_circle),
+              label: const Text('Start Lecture Session'),
+            ),
+            ElevatedButton.icon(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text(
+                      'Attendance records coming soon.',
+                    ),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.fact_check),
+              label: const Text('View Attendance Records'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

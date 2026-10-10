@@ -1,69 +1,23 @@
-# Prerequisites
-*.d
+Flutter and Dart
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-*.so.*
-
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
-# Build directories
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
 build/
-Build/
-build-*/
 
-# CMake generated files
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-Makefile
-install_manifest.txt
-compile_commands.json
+IDE settings
 
-# Temporary files
-*.tmp
-*.log
-*.bak
-*.swp
+.idea/
+.vscode/
 
-# vcpkg
-vcpkg_installed/
+Android generated files
 
-# debug information files
-*.dwo
+android/.gradle/
+android/local.properties
 
-# test output & cache
-Testing/
-.cache/
+Secrets and environment files
+
+.env
+.env.*
+!.env.example

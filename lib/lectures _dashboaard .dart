@@ -39,7 +39,7 @@ void startLecture() {
         content: Text(
           'Lecture started. BLE broadcasting is not connected yet.',
         ),
-      ),
+      ), 
     );
   }
 

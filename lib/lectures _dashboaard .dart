@@ -12,7 +12,7 @@ class LecturerDashboard extends StatefulWidget {
 class _LecturerDashboardState extends State<LecturerDashboard> {
 
 bool isLectureActive = false;
-
+final List<String> checkedInStudents = [];
 void startLecture() {
   setState(() {
     isLectureActive = true;

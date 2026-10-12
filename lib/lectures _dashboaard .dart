@@ -10,6 +10,21 @@ class LecturerDashboard extends StatefulWidget {
 }
 
 class _LecturerDashboardState extends State<LecturerDashboard> {
+
+bool isLectureActive = false;
+
+void startLecture() {
+  setState(() {
+    isLectureActive = true;
+  });
+
+  ScaffoldMessenger.of(context).showSnackBar(
+    const SnackBar(
+      content: Text('Lecture started successfully!'),
+    ),
+  );
+}
+
   bool _lectureActive = false;
   bool _broadcasting = false;
 

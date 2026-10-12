@@ -70,6 +70,19 @@ void startLecture() {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+const ListTile(
+  leading: Icon(Icons.people),
+  title: Text('Student Attendance'),
+  subtitle: Text('Students checked in'),
+),
+...checkedInStudents.map(
+  (student) => ListTile(
+    leading: const Icon(Icons.check_circle_outline),
+    title: Text(student),
+    subtitle: const Text('Checked in'),
+  ),
+),
+
               const Icon(
                 Icons.co_present,
                 size: 72,

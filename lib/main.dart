@@ -173,6 +173,18 @@ class LecturerDashboard extends StatelessWidget {
               icon: const Icon(Icons.fact_check),
               label: const Text('View Attendance Records'),
             ),
+
+ElevatedButton(
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => LecturerDashboard(),
+      ),
+    );
+  },
+  child: const Text('Lecturer Dashboard'),
+),
           ],
         ),
       ),

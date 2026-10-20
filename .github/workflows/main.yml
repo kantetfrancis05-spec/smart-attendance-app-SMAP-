@@ -1,5 +1,7 @@
 steps:smap install 
-  name: Analyze smap
+ - name: Analyze project source
+   run: flutter analyze
+        
 
 'on':
   push:

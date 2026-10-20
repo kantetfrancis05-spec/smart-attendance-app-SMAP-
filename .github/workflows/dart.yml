@@ -20,5 +20,12 @@ jobs:
   working-directory: .
 run: flutter pub get
 
-      - name: Analyze project source
+      -name: Analyze project source
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
         run: dart analyze

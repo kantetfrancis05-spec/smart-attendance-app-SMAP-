@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
               style: TextStyle(
                 fontSize: 23,
                 fontWeight: FontWeight.bold,
-              ),
+              ), 
             ),
             const SizedBox(height: 25),
             ElevatedButton(

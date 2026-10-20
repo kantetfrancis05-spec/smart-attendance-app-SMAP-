@@ -40,7 +40,7 @@ class AttendanceController extends ChangeNotifier {
 }
 
 class InstructorPortalView extends StatelessWidget {
-  const InstructorPortalView({super.key});
+  const InstructorPortalView({super.key}); 
 
   @override
   Widget build(BuildContext context) {

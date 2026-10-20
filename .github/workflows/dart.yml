@@ -28,4 +28,4 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
-        run: dart analyze 
+        run: dart analyze
